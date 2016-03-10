@@ -14,10 +14,13 @@
 - (id) init {
     
     // get bundle
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"SAVideoVLCPlayer" ofType:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    NSBundle *podBundle = [NSBundle bundleForClass:self.classForCoder];
+    NSURL *bundleUrl = [podBundle URLForResource:@"SAVideoVLCPlayer" withExtension:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithURL:bundleUrl];
+    NSString *file = [bundle pathForResource:@"mark" ofType:@"png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:file];
     
-    if (self = [super initWithImage:[UIImage imageWithContentsOfFile:[bundle pathForResource:@"mark" ofType:@"png"]]]) {
+    if (self = [super initWithImage:image]) {
         
     }
     
