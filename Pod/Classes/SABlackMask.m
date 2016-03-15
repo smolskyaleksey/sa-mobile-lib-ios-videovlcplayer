@@ -8,19 +8,16 @@
 
 #import "SABlackMask.h"
 #import "SAVideoPlayer.h"
+#import "SAUtils.h"
 
 @implementation SABlackMask
 
 - (id) init {
-    
-    // get bundle
-    NSBundle *podBundle = [NSBundle bundleForClass:self.classForCoder];
-    NSURL *bundleUrl = [podBundle URLForResource:@"SAVideoVLCPlayer" withExtension:@"bundle"];
-    NSBundle *bundle = [NSBundle bundleWithURL:bundleUrl];
-    NSString *file = [bundle pathForResource:@"mark" ofType:@"png"];
-    UIImage *image = [UIImage imageWithContentsOfFile:file];
-    
-    if (self = [super initWithImage:image]) {
+
+    if (self = [super initWithImage:[UIImage imageWithContentsOfFile:[SAUtils filePathForName:@"mark"
+                                                                                         type:@"png"
+                                                                                    andBundle:@"SAVideoVLCPlayer"
+                                                                                     andClass:self.classForCoder]]]) {
         
     }
     
