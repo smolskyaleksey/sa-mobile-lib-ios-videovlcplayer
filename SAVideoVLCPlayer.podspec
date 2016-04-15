@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = "https://github.com/SuperAwesomeLTD/sa-mobile-lib-ios-videovlcplayer"
-  s.license          = { :type => "Apache License", :file => "LICENSE" }
+  s.license          = { :type => "GNU GENERAL PUBLIC LICENSE Version 3", :file => "LICENSE" }
   s.author           = { "Gabriel Coman" => "gabriel.coman@superawesome.tv" }
   s.source           = { :git => "https://github.com/SuperAwesomeLTD/sa-mobile-lib-ios-videovlcplayer.git", :tag => "1.0.2" }
   s.platform     = :ios, '6.0'
