@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SABlackMask : UIImageView
+@interface SABlackMask : UIView
 @end
