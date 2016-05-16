@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SAURLClicker.h"
 
 @class VLCMediaPlayer;
 
@@ -52,6 +53,7 @@
 
 // delegate method
 @property (nonatomic, weak) id<SAVideoPlayerProtocol> delegate;
+@property (nonatomic, assign) enum ClickerStyle style;
 
 // main function
 - (void) playWithMediaURL:(NSURL *)url;

@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SAURLClicker : UIButton
+typedef enum ClickerStyle {
+    Fullscreen = 0,
+    Button = 1
+} ClikerStyle;
 
+//
+// Class definition
+@interface SAURLClicker : UIButton
+@property (nonatomic, assign) enum ClickerStyle style;
 @end

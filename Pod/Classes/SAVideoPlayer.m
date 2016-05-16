@@ -9,7 +9,6 @@
 #import "SAVideoPlayer.h"
 #import "SABlackMask.h"
 #import "SACronograph.h"
-#import "SAURLClicker.h"
 #import <MobileVLCKit/MobileVLCKit.h>
 
 // shorthand for notifs
@@ -52,24 +51,24 @@
 
 - (id) init {
     if (self = [super init]) {
-        [self setup];
         _notif = [NSNotificationCenter defaultCenter];
+        _style = Fullscreen;
     }
     return self;
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [self setup];
         _notif = [NSNotificationCenter defaultCenter];
+        _style = Fullscreen;
     }
     return self;
 }
 
 - (id) initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        [self setup];
         _notif = [NSNotificationCenter defaultCenter];
+        _style = Fullscreen;
     }
     return self;
 }
@@ -121,6 +120,7 @@
     [_chrome addSubview:_chrono];
     
     _clicker = [[SAURLClicker alloc] init];
+    _clicker.style = _style;
     [_clicker addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     [_chrome addSubview:_clicker];
 }
@@ -188,6 +188,7 @@
 #pragma mark <Play> function
 
 - (void) playWithMediaURL:(NSURL *)url {
+    [self setup];
     _mediaplayer.media = [VLCMedia mediaWithURL:url];
     [_mediaplayer play];
 }
