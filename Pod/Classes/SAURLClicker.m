@@ -26,7 +26,7 @@
 }
 
 - (void) didMoveToSuperview {
-    if (_style == Fullscreen) {
+    if (!_shouldShowSmallClickButton) {
         CGRect parentFrame = self.superview.frame;
         self.frame = CGRectMake(0, 0, parentFrame.size.width, parentFrame.size.height);
         [self setBackgroundColor:[UIColor clearColor]];
