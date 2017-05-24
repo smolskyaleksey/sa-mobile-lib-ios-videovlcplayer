@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
     'SAVideoVLCPlayer' => ['Pod/Assets/*.png']
   }
   s.dependency 'SAUtils'
-  s.dependency 'MobileVLCKit'
+  s.dependency 'MobileVLCKit-prod'
 end
